@@ -35,6 +35,29 @@ Die Variablen unten sind sehr wichtig bitte bei jeder Datei setzen!
         <div class="container text-center">
             <h1 class="display-4">{{ 'downloads'|translate }}</h1>
             <p class="mt-2">{{ 'downloads_jumbotron_paragraph_1'|translate|raw }}</p>
+            {% if featured is not null %}
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">
+                            {{ plugin.getTranslation("featured_title") }} <span class="badge badge-warning"><i class="fas fa-flask"></i> BETA</span>
+                            <p>
+                                <img class="img-responsive" style="max-width: 128px;" src="{{ featured.image }}">
+                            </p>
+                        </h4>
+                        <div class="card-text mb-2">
+                            <div class="row">
+                                {{ plugin.getTranslation(featured.description)|raw }}
+
+                            </div>
+                        </div>
+                        <div class="btn-group d-flex mt-auto" role="group" aria-label="...">
+                            <a target="_blank" href="{{ featured.repository }}" class="btn btn-warning btn-block mt-auto w-100 h-100"><i class="fab fa-github"></i> {{ plugin.getTranslation('view_source') }}</a>
+                            <a target="_blank" href="{{ featured.url }}" class="btn btn-success btn-block mt-auto w-100 h-100"><i class="fas fa-download"></i> {{ plugin.getTranslation('add_to', 1, {"{{ browser }}": featured.browser}) }}</a>
+                        </div>
+
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
     <div class="container-fluid">
