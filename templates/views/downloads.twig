@@ -67,7 +67,7 @@ Die Variablen unten sind sehr wichtig bitte bei jeder Datei setzen!
             {% else %}
                 {% set colSize = 2 %}
             {% endif %}
-            {% include plugin.PluginName ~ "/templates/extensiongrid/grid.twig" with {'Extensions': plugin.getConfig("extensions"), 'columns': colSize} %}
+            {% include plugin.PluginName ~ "/templates/extensiongrid/grid.twig" with {'Extensions': extensions, 'columns': colSize} %}
         </section>
     </div>
 {% endblock %}
