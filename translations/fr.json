@@ -1,3 +1,15 @@
 {
-    "add_to": "Ajouter à {{ browser }}"
+    "add_to": "Ajouter à {{ browser }}",
+    "about_jumbotron_paragraph_1": "\"Conditions d'utilisation ; non lues\" (en anglais \"Terms of Service ; Didn't Read\" soit ToS ;DR) est un projet qui a débuté en juin 2012 pour aider à réparer le \"plus grand mensonge du web\" : presque personne ne lit vraiment les conditions d'utilisation qu'on accepte tout le temps.",
+    "firefox_description": "Cette extension ajoutera une petite icône sur le côté droit de votre barre d'adresses. Si vous naviguez sur un site qui n'est pas sur notre base de données, rien n'apparaîtra. Cliquez sur l'icône pour obtenir un résumé des conditions, fourni par ToS;DR.",
+    "chrome_description": "Cette extension ajoutera une petite icône sur le côté droit de votre barre d'adresses. Si vous naviguez sur un site qui n'est pas sur notre base de données, rien n'apparaîtra. Cliquez sur l'icône pour obtenir un résumé des conditions, fourni par ToS;DR. Lorsque vous atterrissez sur un site avec de très mauvaises conditions d'utilisation, une petite notification apparaîtra en bas à droite pour vous en avertir.",
+    "safari_description": "Cette extension ajoutera une petite icône sur le côté droit de votre barre d'adresses. Si vous naviguez sur un site qui n'est pas sur notre base de données, rien n'apparaîtra. Cliquez sur l'icône pour obtenir un résumé des conditions, fourni par ToS;DR.",
+    "edge_description": "Cette extension ajoutera une petite icône sur le côté droit de votre barre d'adresses. Si vous naviguez sur un site qui n'est pas sur notre base de données, rien n'apparaîtra. Cliquez sur l'icône pour obtenir un résumé des conditions, fourni par ToS;DR.",
+    "opera_description": "Cette extension ajoutera une petite icône sur le côté droit de votre barre d'adresses. Si vous naviguez sur un site qui n'est pas sur notre base de données, rien n'apparaîtra. Cliquez sur l'icône pour obtenir un résumé des conditions, fourni par ToS;DR.",
+    "add-on": "Extension",
+    "extension": "Extension",
+    "view_source": "Regarder le code source sur GitHub",
+    "title": "Téléchargements",
+    "about": "A propos de nous",
+    "featured_title": "Extension pour votre navigateur"
 }
