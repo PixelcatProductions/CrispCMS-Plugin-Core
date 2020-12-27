@@ -1,0 +1,106 @@
+{# 
+ # Copyright 2020 Pixelcat Productions <support@pixelcatproductions.net>
+ # @author 2020 Justin René Back <jback@pixelcatproductions.net>
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+ # you may not use this file except in compliance with the License.
+ # You may obtain a copy of the License at
+ #
+ #      http://www.apache.org/licenses/LICENSE-2.0
+ #
+ # Unless required by applicable law or agreed to in writing, software
+ # distributed under the License is distributed on an "AS IS" BASIS,
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+#}
+
+
+{#
+Die Variablen unten sind sehr wichtig bitte bei jeder Datei setzen!
+    - JB
+#}
+{% set currentPage = 'thanks' %}
+{% set pageTitle = plugin.getTranslation('thanks') %}
+{% set error = false %}
+
+
+
+{% extends "base.twig" %}
+
+{% block content %}
+    {{ include("components/navbar.twig") }}
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">{{ plugin.getTranslation('thank_you') }}</h1>
+            <p class="mt-2">{{ plugin.getTranslation('thanks_jumbotron_paragraph_1')|raw }}</p>
+            <p class="mt-2">{{ plugin.getTranslation('thanks_jumbotron_paragraph_2')|raw }}</p>
+            <p class="mt-2">{{ plugin.getTranslation('thanks_jumbotron_paragraph_3')|raw }}</p>
+            <p class="mt-2">{{ plugin.getTranslation('thanks_jumbotron_paragraph_4')|raw }}</p>
+        </div>
+    </div>
+    <div class="container">
+        <section id="funders">
+            {% if isMobile == true %}
+                {% set colSize = 2 %}
+            {% else %}
+                {% set colSize = 6 %}
+            {% endif %}
+
+            <div class="text-center">
+                <img src="/themes/{{ config.theme }}/img/grundergarage.png">
+            </div>
+
+            <h1>{{ plugin.getTranslation("our_supporters") }}</h1>
+            <hr>
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="/themes/{{ config.theme }}/img/duckduckgo.png">
+                    </div>
+                    <div class="col-6">
+                        <img src="/themes/{{ config.theme }}/img/appdotnet.png">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            {% include plugin.PluginName ~ "/templates/thanksgrid/grid.twig" with {'ThanksList': ThanksList, 'columns': colSize} %}
+        </section>
+        <section id="translators">
+            {% if isMobile == true %}
+                {% set colSize = 1 %}
+            {% else %}
+                {% set colSize = 2 %}
+            {% endif %}
+            <hr>
+            <h1>{{ plugin.getTranslation('translators') }}</h1>
+            <br>
+            <div id="de">
+                <h3>{{ 'language_de'|translate }} - {{ 'language_native_de'|translate }}</h3>
+                <p>
+                    {% include plugin.PluginName ~ "/templates/thanksgrid/grid.twig" with {'ThanksList': plugin.getConfig("translators_de"), 'columns': colSize} %}
+                </p>
+            </div>
+            <div id="es">
+                <h3>{{ 'language_es'|translate }} - {{ 'language_native_es'|translate }}</h3>
+                <p>
+                    {% include plugin.PluginName ~ "/templates/thanksgrid/grid.twig" with {'ThanksList': plugin.getConfig("translators_es"), 'columns': colSize} %}
+                </p>
+            </div>
+
+            <div id="fr">
+                <h3>{{ 'language_fr'|translate }} - {{ 'language_native_fr'|translate }}</h3>
+                <p>
+                    {% include plugin.PluginName ~ "/templates/thanksgrid/grid.twig" with {'ThanksList': plugin.getConfig("translators_fr"), 'columns': colSize} %}
+                </p>
+            </div>
+            <div id="es_MX">
+                <h3>{{ 'language_es_MX'|translate }} - {{ 'language_native_es_MX'|translate }}</h3>
+                <p>
+                    {% include plugin.PluginName ~ "/templates/thanksgrid/grid.twig" with {'ThanksList': plugin.getConfig("translators_es_MX"), 'columns': colSize} %}
+                </p>
+            </div>
+        </section>
+    </div>
+{% endblock %}
