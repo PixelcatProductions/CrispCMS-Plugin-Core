@@ -1,6 +1,6 @@
 {
     "name": "Core Plugin",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "testedVersion": ">=0.0.8-beta.RC4",
     "incompatibleVersion": "<0.0.8-beta.RC4",
     "repository": "https://github.com/PixelcatProductions/CrispCMS-Plugin-Core",
@@ -9,6 +9,11 @@
     "author": "Justin René Back <jback@pixelcatproductions.net>",
     "onInstall": {
         "createTranslationKeys": "translations/",
+        "createCron": [{
+                "type": "cleanup_badges",
+                "interval": "1 HOUR",
+                "data": null
+            }],
         "createKVStorageItems": {
             "translators_de": ["Justin Back", "Anonymous"],
             "translators_es": ["Agnes de Lion", "Guennadi Maximov"],
