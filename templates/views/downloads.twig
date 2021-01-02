@@ -41,7 +41,7 @@ Die Variablen unten sind sehr wichtig bitte bei jeder Datei setzen!
                         <h4 class="card-title">
                             {{ plugin.getTranslation("featured_title") }}
                             <p>
-                                <img class="img-responsive" style="max-width: 128px;" src="{{ featured.image }}">
+                                <img class="img-responsive" style="max-width: 128px;" src="{{ plugin-includeResource(featured.image) }}">
                             </p>
                         </h4>
                         <div class="card-text mb-2">
