@@ -21,7 +21,13 @@
 \crisp\core\Theme::addtoNavbar("about", $this->getTranslation("about"), "/about", "_self", -97);
 \crisp\core\Theme::addtoNavbar("downloads", $this->getTranslation("title"), "/downloads", "_self", -96);
 
-if($this->getConfig("maintenance_enabled") || isset($_GET["simulate_maintenance"])){
-    echo $TwigTheme->render($this->PluginName . "/templates/maintenance/maintenance.twig", array("plugin" => $this));
-    exit;
+if ($this->getConfig("maintenance_enabled") || isset($_GET["simulate_maintenance"])) {
+  http_response_code(503);
+  echo $TwigTheme->render($this->PluginName . "/templates/maintenance/maintenance.twig", array("plugin" => $this));
+  exit;
+}
+if ($this->getConfig("highload_enabled") || isset($_GET["simulate_highload"])) {
+  http_response_code(503);
+  echo $TwigTheme->render($this->PluginName . "/templates/highload/highload.twig", array("plugin" => $this));
+  exit;
 }
