@@ -36,7 +36,7 @@
           <a target="_blank" href="https://github.com/{{ member.github }}" class="btn btn-dark btn-block mt-auto w-100"><i class="fab fa-github"></i></a>
           {% endif %}
           {% if member.pgp is not empty %}
-          <a target="_blank" href="/{{ config.plugin_dir }}/core/{{ plugin.getConfig("pgp_dir") }}{{ member.pgp }}" class="btn btn-success btn-block mt-auto w-100">
+          <a target="_blank" href="{{ plugin.includeResource(plugin.getConfig("pgp_dir") ~ member.pgp) }}" class="btn btn-success btn-block mt-auto w-100">
             <span class="fa-layers fa-fw">
               <i class="fas fa-envelope"></i>
               <i class="fas fa-key" style="color: gold;" data-fa-transform="shrink-2 down-4 right-5"></i>
