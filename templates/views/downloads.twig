@@ -51,8 +51,8 @@ Die Variablen unten sind sehr wichtig bitte bei jeder Datei setzen!
                             </div>
                         </div>
                         <div class="btn-group d-flex mt-auto" role="group" aria-label="...">
-                            <a target="_blank" href="{{ featured.repository }}" class="btn btn-warning btn-block mt-auto w-100 h-100"><i class="fab fa-github"></i> {{ plugin.getTranslation('view_source') }}</a>
-                            <a href="{% if featured.direct is defined %}{{ featured.direct }}{% else %}{{ featured.url }}{% endif %}" class="btn btn-success btn-block mt-auto w-100 h-100"><i class="fas fa-download"></i> {{ plugin.getTranslation('add_to', 1, {"{{ browser }}": featured.browser}) }}</a>
+                            <a target="_blank" href="{{ generateLink(featured.repository, true) }}" class="btn btn-warning btn-block mt-auto w-100 h-100"><i class="fab fa-github"></i> {{ plugin.getTranslation('view_source') }}</a>
+                            <a href="{% if featured.direct is defined %}{{ generateLink(featured.direct, true) }}{% else %}{{ generateLink(featured.url, true) }}{% endif %}" class="btn btn-success btn-block mt-auto w-100 h-100"><i class="fas fa-download"></i> {{ plugin.getTranslation('add_to', 1, {"{{ browser }}": featured.browser}) }}</a>
                         </div>
 
                     </div>

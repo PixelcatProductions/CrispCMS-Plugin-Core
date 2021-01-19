@@ -1,8 +1,8 @@
 {
   "name": "Core Plugin",
-  "version": "1.0.3",
-  "testedVersion": ">=1.0.0",
-  "incompatibleVersion": "<1.0.0",
+  "version": "1.1.0",
+  "testedVersion": ">=1.1.0",
+  "incompatibleVersion": "<1.1.0",
   "repository": "https://github.com/PixelcatProductions/CrispCMS-Plugin-Core",
   "description": "A core plugin for crisp",
   "hookFile": "hook.php",

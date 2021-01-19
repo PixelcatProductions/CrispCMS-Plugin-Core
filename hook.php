@@ -17,9 +17,10 @@
  * limitations under the License.
  */
 
+
 /** @var crisp\core\Plugin $this */
-\crisp\core\Theme::addtoNavbar("about", $this->getTranslation("about"), "/about", "_self", -97);
-\crisp\core\Theme::addtoNavbar("downloads", $this->getTranslation("title"), "/downloads", "_self", -96);
+\crisp\core\Theme::addtoNavbar("about", $this->getTranslation("about"), \crisp\api\Helper::generateLink("about"), "_self", -97);
+\crisp\core\Theme::addtoNavbar("downloads", $this->getTranslation("title"), \crisp\api\Helper::generateLink("downloads"), "_self", -96);
 
 if ($this->getConfig("maintenance_enabled") || isset($_GET["simulate_maintenance"])) {
   http_response_code(503);
